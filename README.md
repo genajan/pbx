@@ -10,7 +10,8 @@ $ git clone https://github.com/genajan/pbx.git
 ```
 $ cd pbx
 ```
-3. Start container
+3. Edit settings in 'rootfs/etc/kamailio/vars.cfg' and 'rootfs/etc/asterisk/pjsip.conf'. Set suitable IP addresses, ports and domain name.
+4. Start container
 ```
 $ docker-compose up -d
 ```
