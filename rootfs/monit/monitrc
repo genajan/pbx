@@ -1,0 +1,18 @@
+set daemon 60
+set logfile syslog facility log_daemon
+set idfile /var/lib/monit/id
+set statefile /var/lib/monit/state
+
+
+set eventqueue
+	basedir /var/lib/monit/events
+	slots 100
+
+set httpd port 2822 and
+	use address localhost  # only accept connection from localhost
+	allow localhost        # allow localhost to connect to the server and
+	allow admin:monit      # require user 'admin' with password 'monit'
+
+include /etc/monit/conf.d/*
+include /etc/monit/conf-enabled/*
+
