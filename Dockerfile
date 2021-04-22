@@ -9,6 +9,7 @@ RUN echo "deb http://ftp.de.debian.org/debian buster-backports main" | \
   apt-utils \
   procps \
   nano \
+  curl \
   rsyslog \
   less \
   net-tools \
