@@ -13,6 +13,7 @@ RUN echo "deb http://ftp.de.debian.org/debian buster-backports main" | \
   rsyslog \
   less \
   net-tools \
+  iproute2 \
   libssl1.1 \
   libcurl4 \
   libxml2 \
