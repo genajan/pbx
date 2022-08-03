@@ -6,5 +6,7 @@ services:
       image: pbx
       env_file:
          - .env
+      volumes:
+         - ./configs:/etc/configs
       restart: unless-stopped
       network_mode: host

@@ -40,10 +40,6 @@ RUN echo "deb http://ftp.de.debian.org/debian buster-backports main" | \
   && rm -rf /packages && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY rootfs /
-RUN LOCALUSERSPASSWORD=$(/usr/bin/openssl rand --base64 30) \
-  && sed -i "s/localuserspassword/$LOCALUSERSPASSWORD/" /etc/asterisk/pjsip_wizard.conf \
-  && echo "localuserspassword: $LOCALUSERSPASSWORD" \
-  && chown asterisk.asterisk /etc/asterisk/*
 
 ENTRYPOINT ["/start.sh"]
 
