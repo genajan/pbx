@@ -33,6 +33,7 @@ RUN echo "deb http://ftp.de.debian.org/debian buster-backports main" | \
   kamailio-mysql-modules \
   kamailio-lua-modules \
 # Install asterisk
+  lua-sql-sqlite3 \
   asterisk-opus \
   asterisk \
 \
