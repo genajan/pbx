@@ -4,6 +4,10 @@
 trap "/stop.sh ; exit" EXIT
 
 HOST_IP=`ip route get 1 | sed -n 's/^.*src \([0-9.]*\) .*$/\1/p'`
+[ -z "${HOST_IP}" ] && exit 1
+EXT_IP=`curl -s ifconfig.me`
+[ -z "${EXT_IP}" ] && exit 1
+[ -z "${DOMAIN}" ] && DOMAIN=$EXT_IP
 
 chown -R kamailio:kamailio /etc/kamailio/
 

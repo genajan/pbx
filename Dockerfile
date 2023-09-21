@@ -1,3 +1,5 @@
+#docker build -t genajan/pbx .
+
 FROM debian:buster-slim
 
 MAINTAINER Gennadiy Ganchev <genajan@gmail.com>

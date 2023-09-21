@@ -1,9 +1,9 @@
 version: '3'
 services:
 
-   cont:
-      build: .
-      image: pbx
+   pbx:
+      container_name: pbx
+      image: genajan/pbx:latest
       env_file:
          - .env
       restart: unless-stopped

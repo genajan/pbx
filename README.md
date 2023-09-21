@@ -10,8 +10,10 @@ $ git clone https://github.com/genajan/pbx.git
 ```
 $ cd pbx
 ```
-3. Edit .env file. Set domain name and IP address.
+3. Edit .env file. Set domain name if needed.
 4. Start container
 ```
 $ docker-compose up -d
+```
+5. Auto generated sip credentials can be found inside the container in /etc/asterisk/pjsip_wizard.conf
 ```
