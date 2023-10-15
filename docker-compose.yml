@@ -1,10 +1,13 @@
 version: '3'
 services:
 
-   cont:
-      build: .
-      image: pbx
+   pbx:
+      container_name: pbx
+      #build: .
+      image: genajan/pbx:latest
       env_file:
          - .env
+      volumes:
+         - ./configs:/etc/configs
       restart: unless-stopped
       network_mode: host
