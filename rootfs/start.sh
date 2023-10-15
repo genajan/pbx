@@ -18,8 +18,8 @@ ln -sfn /etc/radcli/ /etc/radiusclient-ng
 # Apply host specific settings
 sed -i "s/mydomain.com/$DOMAIN/" /etc/kamailio/vars.cfg /etc/monit/conf.d/kamailio.conf /etc/asterisk/pjsip_wizard.conf
 sed -i "s/127.0.0.2/$HOST_IP/" /etc/kamailio/vars.cfg /etc/asterisk/pjsip.conf /etc/monit/conf.d/kamailio.conf
+[ -z "${LOCALUSERSPASSWORD}" ] && LOCALUSERSPASSWORD=$(/usr/bin/openssl rand -hex 12)
 if grep -q localuserspassword "/etc/asterisk/pjsip_wizard.conf"; then
-    LOCALUSERSPASSWORD=$(/usr/bin/openssl rand -hex 12)
     sed -i "s/localuserspassword/$LOCALUSERSPASSWORD/" /etc/asterisk/pjsip_wizard.conf
     echo "localuserspassword was replaced to: $LOCALUSERSPASSWORD"
 fi
